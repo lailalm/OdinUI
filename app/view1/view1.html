@@ -1,0 +1,76 @@
+<div class="four wide column">
+{{ vtdirect }}
+</div>
+<div class="ui one column stackable center aligned page grid">
+	<div class="ui styled accordion">
+	  <div class="title">
+	    <div class="ui checked checkbox">
+			  <input type="checkbox" checked="">
+			  <label>VT-DIRECT</label>
+			</div>
+	    <i class="dropdown icon"></i>
+		</div>
+	  <div class="content">
+	  	<div ng-repeat="vd in vtdirect">
+	  		<div class="title">
+			    <div class="ui checked checkbox">
+					  <input type="checkbox" checked="">
+					  <label>{{ vd.name }}</label>
+					</div>
+			    <i class="dropdown icon"></i>
+			  </div>
+			  <div class="content">
+				  <div ng-repeat="feature in vd.feature">
+				  	<div class="ui checked checkbox">
+						  <input type="checkbox" checked="">
+						  <label>{{ feature }}</label>
+						</div>
+				  </div>
+			  </div>
+	  	</div>  
+		</div>
+	  <div class="title">
+	  	<div class="ui checked checkbox">
+			  <input type="checkbox" checked="">
+			  <label>VT-WEB</label>
+			</div>
+	    <i class="dropdown icon"></i>
+	  </div>
+	  <div class="content">
+	    <p>There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.</p>
+	  </div>
+	  <div class="title">
+	  	<div class="ui checked checkbox">
+			  <input type="checkbox" checked="">
+			  <label>VT-LINK</label>
+			</div>
+	    <i class="dropdown icon"></i>
+	  </div>
+	  <div class="content">
+	    <p>Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+	    <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
+	  </div>
+	</div>
+</div>
+
+
+<div class="ui divider"></div>
+
+<div class="ui one column stackable center aligned page grid">
+  <div class="column twelve wide">
+    <input type="button" class="huge ui blue centered button" ng-click="getResponse()" value="Console">
+  </div>
+</div>
+
+<div class="ui divider"></div>
+
+<div class="ui raised very padded text container segment">
+  <h2 class="ui header">Results</h2>
+  {{ result }}
+  <p></p>
+  <p></p>
+</div>
+
+<script type="text/javascript">
+	$('.ui.accordion').accordion();    
+</script>

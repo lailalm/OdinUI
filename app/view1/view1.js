@@ -12,11 +12,18 @@ angular.module('myApp.view1', ['ngRoute'])
 .controller('View1Ctrl', ['$scope', function($scope, $http) {
 	function initialize() {
 		$scope.vtdirect = 
-	  [
-	    {name: "Bank Transfer",  path: "bank_transfer", feature:['expiry', 'permata', 'refund']},
-	    {name: "BBM Money",   path: "bbm_money", feature:[]},
-	    {name: "BCA KlikPay",   path: "bca_klikpay",  feature:[]}
+	    [
+		    {name: "Bank Transfer",  path: "bank_transfer", feature:['expiry', 'permata', 'refund']},
+		    {name: "BBM Money",   path: "bbm_money", feature:['expiry', 'basic', 'refund']},
+		    {name: "BCA KlikPay",   path: "bca_klikpay",  feature:['expiry', 'basic', 'refund']}
 		];
+		$scope.vtweb = 
+	    [
+		    {name: "Bank Transfer",  path: "bank_transfer", feature:['mobile_basic', 'permata']},
+		    {name: "BBM Money",   path: "bbm_money", feature:['desktop','device','expiry_message','mobile_basic']},
+		    {name: "BCA KlikPay",   path: "bca_klikpay",  feature:['basic','mobile_basic']}
+		];
+
 	}
 
   function getResponse() {
@@ -35,6 +42,6 @@ angular.module('myApp.view1', ['ngRoute'])
   }
 
 	initialize();
-  getResponse();
+  // getResponse();
 
 }]);
